@@ -1,0 +1,44 @@
+# Ignore node_modules in both frontend and backend
+node_modules/
+
+# Ignore build and cache files
+dist/
+.cache/
+.vite/
+
+# Ignore environment files
+.env
+.env.local
+.env.*.local
+
+# Ignore OS-generated files
+.DS_Store
+Thumbs.db
+
+# Ignore log files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Ignore lock files (if you're using only one package manager, you can remove the others)
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# Ignore Tailwind CSS and PostCSS configuration if not required to commit
+postcss.config.js
+tailwind.config.js
+
+# Ignore IDE files
+.vscode/
+.idea/
+
+# Ignore TypeScript build files
+*.tsbuildinfo
+
+# Ignore coverage reports
+coverage/
+
+# Ignore specific assets or uploads (optional)
+public/uploads/
