@@ -5,14 +5,25 @@ import { BrowserRouter as Router } from 'react-router-dom'
 import AppRouters from './AppRouters.tsx'
 
 import Auth0ProviderWithNavigate from './auth/Auth0ProviderWithNavigate.tsx'
+import { QueryClient, QueryClientProvider } from 'react-query'
+
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      refetchOnWindowFocus: false
+    }
+  }
+})
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <Router>
-      <Auth0ProviderWithNavigate>
-        <AppRouters />
-      </Auth0ProviderWithNavigate>
+      <QueryClientProvider client={queryClient}>
+        <Auth0ProviderWithNavigate>
+          <AppRouters />
+        </Auth0ProviderWithNavigate>
 
+      </QueryClientProvider>
     </Router>
   </StrictMode>,
 )
